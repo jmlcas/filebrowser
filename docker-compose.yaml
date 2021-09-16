@@ -9,8 +9,8 @@ services:
     ports:
       - "8200:8080"
     volumes:
-      - /DATA_DIR:/data
-      - /CONFIG_DIR:/config
+      - ./fb-data:/data
+      - ./fb-config:/config
     environment:
       - FB_BASEURL=/filebrowser
     restart: unless-stopped
