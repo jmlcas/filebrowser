@@ -5,7 +5,10 @@ services:
 
   filebrowser:
     image: hurlenko/filebrowser
-    user: "${UID}:${GID}"
+    environment:
+      - UID=1000
+      - GID=1000
+      - TZ=Europe/Madrid
     ports:
       - "8200:8080"
     volumes:
