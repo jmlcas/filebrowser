@@ -14,8 +14,6 @@ services:
     volumes:
       - ./fb-data:/data
       - ./fb-config:/config
-    environment:
-      - FB_BASEURL=/filebrowser
     restart: unless-stopped
 
     
