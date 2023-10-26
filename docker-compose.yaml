@@ -4,7 +4,7 @@ version: "3"
 services:
 
   filebrowser:
-    image: hurlenko/filebrowser
+    image: hurlenko/filebrowser:latest
     environment:
       - UID=1000
       - GID=1000
