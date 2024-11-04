@@ -2,10 +2,12 @@ services:
 
   filebrowser:
     image: hurlenko/filebrowser:latest
+    container_name: filebrowser
     environment:
-      - UID=1000
-      - GID=1000
+      - PUID=1000
+      - PGID=1000
       - TZ=Europe/Madrid
+      - FB_BASEURL=/filebrowser
     ports:
       - "8200:8080"
     volumes:
