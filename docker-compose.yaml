@@ -13,4 +13,7 @@ services:
     volumes:
       - ./fb-data:/data
       - ./fb-config:/config
+      - ./music:/data/music
+      - ./movies:/data/movies
+      - ./photos:/data/photos       
     restart: unless-stopped    
