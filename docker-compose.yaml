@@ -15,5 +15,5 @@ services:
       - ./fb-config:/config
       - ./music:/data/music
       - ./movies:/data/movies
-      - ./photos:/data/photos       
-    restart: unless-stopped    
+      - ./photos:/data/photos
+    restart: unless-stopped
