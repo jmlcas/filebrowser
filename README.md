@@ -2,8 +2,11 @@
 
 Ver en "http://localhost:8200"
 
-Usuario: admin
+------------------------------
+Para saber usuario y password, debes utilizar el comando: sudo docker logs filebrowser
 
-Password: admin
+y verás ahí el user "admin" y el password "xxxxxxxxxxx"
+
+
 
 
