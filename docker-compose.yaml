@@ -1,8 +1,8 @@
 services:
 
-  filebrowser-quantum:
-    image: gtstef/filebrowser
-    container_name: filebrowser-quantum
+  filebrowser:
+    image: gtstef/filebrowser:latest
+    container_name: filebrowser
     restart: unless-stopped
     ports:
       - "8200:80"
@@ -19,5 +19,7 @@ services:
       - "8080:80"
     environment:
       - JWT_ENABLED=true
-      - JWT_SECRET=your_secret_here
+      - JWT_SECRET=TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue
+    restart: unless-stopped
+
 
