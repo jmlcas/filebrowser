@@ -14,10 +14,11 @@ auth:
       enabled: true
       
 integrations:
-  media:
-    ffmpegPath: "/usr/local/bin" 
-    
   # Office integration (OnlyOffice)
   office:
-    url: "http://localhost:8080"
-    secret: TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue
+    url: "http://188.213.5.144:8080"   # http://localhost:8080
+
+onlyoffice:
+  environment:
+    - JWT_ENABLED=true
+    - JWT_SECRET=TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue
