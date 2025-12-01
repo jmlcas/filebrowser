@@ -1,19 +1,23 @@
 services:
 
-  filebrowser:
-    image: hurlenko/filebrowser:latest
-    container_name: filebrowser
-    environment:
-      - PUID=1000
-      - PGID=1000
-      - TZ=Europe/Madrid
-      - FB_BASEURL=/filebrowser
-    ports:
-      - "8200:8080"
-    volumes:
-      - ./fb-data:/data
-      - ./fb-config:/config
-      - ./music:/data/music
-      - ./movies:/data/movies
-      - ./photos:/data/photos
+  filebrowser-quantum:
+    image: gtstef/filebrowser
+    container_name: filebrowser-quantum
     restart: unless-stopped
+    ports:
+      - "8200:80"
+    environment:
+      - TZ=Europe/Madrid
+    volumes:
+      - ./config.yaml:/filebrowser-quantum/data/config.yaml
+      - ./data:/filebrowser-quantum/data
+      - ./share:/share
+
+  onlyoffice:
+    image: onlyoffice/documentserver:latest
+    ports:
+      - "8080:80"
+    environment:
+      - JWT_ENABLED=true
+      - JWT_SECRET=your_secret_here
+
