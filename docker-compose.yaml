@@ -8,6 +8,9 @@ services:
       - "8200:80"
     environment:
       - TZ=Europe/Madrid
+      - ONLYOFFICE_URL="http://188.213.5.144:8080"
+      - ONLYOFFICE_FILE_EXTENSIONS=('doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'odt', 'fodt', 'odp', 'fodp', 'ods', 'fods')
+      - ONLYOFFICE_JWT_SECRET=TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue      
     volumes:
       - ./config.yaml:/filebrowser-quantum/data/config.yaml
       - ./data:/filebrowser-quantum/data
@@ -20,6 +23,5 @@ services:
     environment:
       - JWT_ENABLED=true
       - JWT_SECRET=TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue
+      - JWT_HEADER=Authorization
     restart: unless-stopped
-
-
