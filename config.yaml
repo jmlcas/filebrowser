@@ -19,5 +19,5 @@ integrations:
     
   # Office integration (OnlyOffice)
   office:
-    url: "http://onlyoffice:80"
-    secret: "your-secret_here"
+    url: "http://localhost:8080"
+    secret: TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue
