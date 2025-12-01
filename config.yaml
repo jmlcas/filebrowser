@@ -3,6 +3,7 @@ server:
     - path: "./share"
       config:
         defaultEnabled: true
+        
 frontend:
   name: "Servidor-1"
 auth:
@@ -11,3 +12,12 @@ auth:
   methods:
     password:
       enabled: true
+      
+integrations:
+  media:
+    ffmpegPath: "/usr/local/bin" 
+    
+  # Office integration (OnlyOffice)
+  office:
+    url: "http://onlyoffice:80"
+    secret: "your-secret_here"
