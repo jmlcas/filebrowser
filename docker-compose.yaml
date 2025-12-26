@@ -8,23 +8,19 @@ services:
       - "8200:80"
     environment:
       - TZ=Europe/Madrid
-      - FILEBROWSER_ONLYOFFICE_SECRET=TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue      
-#      - ONLYOFFICE_URL="http://188.213.5.144:8080"
-#      - ONLYOFFICE_FILE_EXTENSIONS=('doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'odt', 'fodt', 'odp', 'fodp', 'ods', 'fods')
+      - FILEBROWSER_ONLYOFFICE_SECRET=TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue
     volumes:
       - ./config.yaml:/home/filebrowser/config.yaml
       - ./data:/data
-      - ./share:/share      
+      - ./share:/share
       - ./data:/home/filebrowser/data
 
   onlyoffice:
     image: onlyoffice/documentserver:latest
-    container_name: onlyoffice        
+    container_name: onlyoffice 
+    restart: unless-stopped
     ports:
       - "8080:80"
     environment:
       - JWT_ENABLED=true
       - JWT_SECRET=TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue
-#      - JWT_HEADER=Authorization
-    restart: unless-stopped
-
