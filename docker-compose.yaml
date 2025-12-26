@@ -8,20 +8,23 @@ services:
       - "8200:80"
     environment:
       - TZ=Europe/Madrid
-      - ONLYOFFICE_URL="http://188.213.5.144:8080"
-      - ONLYOFFICE_FILE_EXTENSIONS=('doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'odt', 'fodt', 'odp', 'fodp', 'ods', 'fods')
-      - ONLYOFFICE_JWT_SECRET=TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue      
+      - FILEBROWSER_ONLYOFFICE_SECRET=TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue      
+#      - ONLYOFFICE_URL="http://188.213.5.144:8080"
+#      - ONLYOFFICE_FILE_EXTENSIONS=('doc', 'docx', 'ppt', 'pptx', 'xls', 'xlsx', 'odt', 'fodt', 'odp', 'fodp', 'ods', 'fods')
     volumes:
-      - ./config.yaml:/filebrowser-quantum/data/config.yaml
-      - ./data:/filebrowser-quantum/data
-      - ./share:/share
+      - ./config.yaml:/home/filebrowser/config.yaml
+      - ./data:/data
+      - ./share:/share      
+      - ./data:/home/filebrowser/data
 
   onlyoffice:
     image: onlyoffice/documentserver:latest
+    container_name: onlyoffice        
     ports:
       - "8080:80"
     environment:
       - JWT_ENABLED=true
       - JWT_SECRET=TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue
-      - JWT_HEADER=Authorization
+#      - JWT_HEADER=Authorization
     restart: unless-stopped
+
