@@ -1,6 +1,7 @@
 server:
+  port: 80
   sources:
-    - path: "./share"
+    - path: /share
       config:
         defaultEnabled: true
         
@@ -14,11 +15,10 @@ auth:
       enabled: true
       
 integrations:
-  # Office integration (OnlyOffice)
+  media:
+    ffmpegPath: "/usr/local/bin"
   office:
     url: "http://188.213.5.144:8080"   # http://localhost:8080
-
-onlyoffice:
-  environment:
-    - JWT_ENABLED=true
-    - JWT_SECRET=TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue
+#    internalUrl: "http://localhost:80"
+    secret: TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue    
+#    - JWT_SECRET=TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue
