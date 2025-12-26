@@ -1,7 +1,9 @@
 server:
   port: 80
   sources:
-    - path: /share
+    - path: /documents
+    - path: /movies
+    - path: /photos
       config:
         defaultEnabled: true
         
