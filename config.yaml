@@ -9,20 +9,17 @@ server:
       name: Vídeos
       config:
         defaultEnabled: true
-        
 frontend:
   name: "FileBrowser"
-  
 auth:
   adminUsername: admin
   adminPassword: admin
   methods:
     password:
       enabled: true
-      
 integrations:
   media:
     ffmpegPath: "/usr/local/bin"
   office:
     url: "http://localhost:8080"   # http://IP:8080 ó https://tudominio.com
-    secret: TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue    
+    secret: TevrjpRNMmKC0JxAwY7iZ2VXLrvG1gue
