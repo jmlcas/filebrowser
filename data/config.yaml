@@ -1,0 +1,25 @@
+server:
+  database:
+    path: "data/filebrowser.sqlite"
+  cacheDir: "data/tmp"
+  sources:
+    - path: "/files"
+      name: Home
+      config:
+        defaultUserScope: "/users/" # new users will get created in /users/<username>
+        defaultEnabled: true # all users get this source on create; v2.0.1+ also merges for existing users on startup
+        createUserDir: true # a user "bill" will see files from /files/users/bill
+    - path: "/home/filebrowser" # mount the docker home folder for convenience
+      name: Backend
+    # Add your sources here.
+  #externalUrl: 'https://<YOUR_IP>:8900' # if you plan to share externally, share links will be generated with this url
+  maxArchiveSize: 50 # maxiumum pre-archive size users are allowed to download at once.
+auth:
+  tokenExpirationHours: 2
+  methods:
+    password:
+      enabled: true
+      minLength: 5
+      signup: true
+  adminUsername: admin
+  adminPassword: admin # remove this after first startup if you want to change this password manually.
