@@ -1,6 +1,6 @@
 server:
   database:
-    path: "filebrowser.sqlite"
+    path: "data/filebrowser.sqlite"
   cacheDir: "data/tmp"
   sources:
     - path: "/files"
@@ -21,5 +21,5 @@ auth:
       enabled: true
       minLength: 5
       signup: true
-  adminUsername: admin
-  adminPassword: admin # remove this after first startup if you want to change this password manually.
+  adminUsername: "admin"
+  adminPassword: "admin"
