@@ -1,7 +1,7 @@
 services:
 
   filebrowser:
-    image: ghcr.io/gtsteffaniak/filebrowser:beta
+    image: gtstef/filebrowser:latest
     container_name: filebrowser
     ports:
       - "8900:80"
@@ -12,3 +12,5 @@ services:
       - ./files:/files
     environment:
       - FILEBROWSER_CONFIG=data/config.yaml
+      - FILEBROWSER_DATABASE_PATH="data/filebrowser.sqlite"
+      - TZ=Europe/Madrid
